@@ -1,53 +1,97 @@
 body {
-  background-color: lightblue; /* sets the background color */
-  font-family: Arial, sans-serif; /* sets the font to Arial */
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
 }
 
 header {
-  text-align: center;              
-  font-size: 2.5em;                 
-  font-weight: bold;              
-  padding: 20px;                    
-  background-color: #3399ff;     
-  color: white;                  
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #3399ff;
+  color: white;
 }
 
 nav ul {
-  list-style-type: none;   
-  padding: 0;             
-  margin: 0;           
-  display: flex;           
-  justify-content: center;    
-  gap: 20px;               
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav ul li a {
-  text-decoration: none;    
-  color: white;    
-  padding: 8px 16px;   
-  border-radius: 4px;        
-  transition: background-color 0.3s, color 0.3s; 
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: white; 
-  color: #3399ff;             
+  background-color: white;
+  color: #3399ff;
 }
 
 main section {
-  padding: 10px;                 
-  margin: 10px auto;           
-  max-width: 800px;           
-  background-color: #f0f8ff;       
-  border: 1px solid #3399ff;       
-  border-radius: 8px;            
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 800px;
+  background-color: #f0f8ff;
+  border: 1px solid #3399ff;
+  border-radius: 8px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main section:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+th, td {
+  border: 1px solid #3399ff;
+  padding: 10px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #3399ff;
+  color: white;
+}
+
+tfoot td {
+  background-color: #d9eaff;
+  font-style: italic;
+}
+
+img {
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
 }
 
 footer {
-  text-align: center;             
-  font-size: 0.8em;          
-  padding: 12px;              
-  background-color: #3399ff;     
-  color: white;            
+  text-align: center;
+  font-size: 0.8em;
+  padding: 12px;
+  background-color: #3399ff;
+  color: white;
 }
