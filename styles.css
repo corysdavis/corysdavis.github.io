@@ -1,3 +1,4 @@
+/* ===== General Styles ===== */
 body {
   background-color: lightblue;
   font-family: Arial, sans-serif;
@@ -12,16 +13,17 @@ header {
   color: white;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+/* ===== Navigation Flexbox ===== */
+nav.flex-nav ul {
   display: flex;
   justify-content: center;
   gap: 25px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li a {
+nav.flex-nav ul li a {
   text-decoration: none;
   color: white;
   padding: 10px 20px;
@@ -29,15 +31,26 @@ nav ul li a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
+nav.flex-nav ul li a:hover {
   background-color: white;
   color: #3399ff;
 }
 
+/* ===== Main Flexbox ===== */
+main.flex-main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== Sections Styling ===== */
 main section {
   padding: 25px;
   margin: 20px auto;
   max-width: 1000px;
+  width: 90%;
   background-color: #f0f8ff;
   border: 1px solid #3399ff;
   border-radius: 10px;
@@ -50,6 +63,7 @@ main section:hover {
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== Table Styling ===== */
 table {
   width: 100%;
   font-size: 1.2em;
@@ -91,10 +105,93 @@ img:hover {
   transform: scale(1.05);
 }
 
+/* ===== Footer ===== */
 footer {
   text-align: center;
   font-size: 1em;
   padding: 15px;
   background-color: #3399ff;
   color: white;
+}
+
+/* ===== Contact Form Flexbox ===== */
+form.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form.contact-form input[type="text"],
+form.contact-form input[type="email"],
+form.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #3399ff;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+form.contact-form input[type="text"]:focus,
+form.contact-form input[type="email"]:focus,
+form.contact-form textarea:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+
+form.contact-form input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form.contact-form input[type="submit"]:hover {
+  background-color: #ff9900;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) { /* Phones */
+  main.flex-main {
+    gap: 15px;
+  }
+  nav.flex-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) { /* Tablets */
+  main.flex-main {
+    gap: 20px;
+  }
+  nav.flex-nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) { /* Desktops */
+  main.flex-main {
+    gap: 25px;
+  }
+  nav.flex-nav ul {
+    flex-direction: row;
+    gap: 25px;
+  }
 }
