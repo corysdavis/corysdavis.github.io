@@ -40,3 +40,5 @@ To view this website locally, follow these steps:
 
 ## License
 This project is licensed under the [Your License Name] License - see the [LICENSE](LICENSE) file for details.
+
+![Local Host Screenshot](./Local%20Host.png)
