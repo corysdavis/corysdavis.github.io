@@ -1,4 +1,3 @@
-/* ===== General Styles ===== */
 body {
   background-color: lightblue;
   font-family: Arial, sans-serif;
@@ -6,14 +5,13 @@ body {
 
 header {
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
   padding: 25px;
-  background-color: #3399ff;
+  background-color: #062d53;
   color: white;
 }
 
-/* ===== Navigation Flexbox ===== */
 nav.flex-nav ul {
   display: flex;
   justify-content: center;
@@ -33,10 +31,9 @@ nav.flex-nav ul li a {
 
 nav.flex-nav ul li a:hover {
   background-color: white;
-  color: #3399ff;
+  color: #1d5b99;
 }
 
-/* ===== Main Flexbox ===== */
 main.flex-main {
   display: flex;
   flex-direction: column;
@@ -45,14 +42,13 @@ main.flex-main {
   padding: 20px;
 }
 
-/* ===== Sections Styling ===== */
 main section {
   padding: 25px;
   margin: 20px auto;
   max-width: 1000px;
   width: 90%;
   background-color: #f0f8ff;
-  border: 1px solid #3399ff;
+  border: 1px solid #053b71;
   border-radius: 10px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -63,7 +59,6 @@ main section:hover {
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Table Styling ===== */
 table {
   width: 100%;
   font-size: 1.2em;
@@ -79,13 +74,13 @@ caption {
 }
 
 th, td {
-  border: 1px solid #3399ff;
+  border: 1px solid #06315d;
   padding: 15px;
   text-align: center;
 }
 
 thead th {
-  background-color: #3399ff;
+  background-color: #0659ac;
   color: white;
 }
 
@@ -105,16 +100,14 @@ img:hover {
   transform: scale(1.05);
 }
 
-/* ===== Footer ===== */
 footer {
   text-align: center;
   font-size: 1em;
   padding: 15px;
-  background-color: #3399ff;
+  background-color: #12365a;
   color: white;
 }
 
-/* ===== Contact Form Flexbox ===== */
 form.contact-form {
   display: flex;
   flex-direction: column;
@@ -134,7 +127,7 @@ form.contact-form input[type="text"],
 form.contact-form input[type="email"],
 form.contact-form textarea {
   padding: 10px;
-  border: 1px solid #3399ff;
+  border: 1px solid #071f37;
   border-radius: 5px;
   font-size: 1em;
   transition: border-color 0.3s ease;
@@ -162,7 +155,7 @@ form.contact-form input[type="submit"]:hover {
   background-color: #ff9900;
 }
 
-/* ===== Responsive Design ===== */
+/* Responsive Design */
 @media (max-width: 600px) { /* Phones */
   main.flex-main {
     gap: 15px;
@@ -194,4 +187,65 @@ form.contact-form input[type="submit"]:hover {
     flex-direction: row;
     gap: 25px;
   }
+}
+
+/* dark mode */
+
+body.dark-mode a {
+    color: #90caf9;
+}
+
+.dark-mode-toggle {
+    padding: 1rem;
+    background-color: #f5f5f5;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: #1e1e1e;
+}
+
+/* dark mode styles */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #0b1d33;
+  color: #ffffff;
+}
+
+body.dark-mode main section {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #ffffff;
+}
+
+body.dark-mode table {
+  color: #ffffff;
+}
+
+body.dark-mode thead th {
+  background-color: #1f4f99;
+}
+
+body.dark-mode tfoot td {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #555;
+}
+
+body.dark-mode a {
+  color: #90caf9;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #1e1e1e;
 }

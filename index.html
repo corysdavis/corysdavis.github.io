@@ -6,11 +6,20 @@
     <meta name="keywords" content="final project, homepage, portfolio, web development">
     <meta name="author" content="Cory Davis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project Website</title>
+    <title>Project Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Header Section -->
+
+    <div class="dark-mode-toggle">
+    <label>
+        <input type="checkbox" id="darkModeToggle">
+        Dark Mode
+    </label>
+    </div>
+
+    <!-- Header -->
     <header>
         <h1>Welcome to the Final Project Website!</h1>
         <!-- Navigation Menu -->
@@ -23,15 +32,43 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
+    <!-- Main Content -->
     <main class="flex-main">
-        <!-- About Section -->
-        <section id="about">
+        <!-- About -->
+       <section id="about">
             <h2>About</h2>
             <p>Welcome to the About section.</p>
+
+        <h3>Skills</h3>
+            <ul id="skillsList"></ul>
         </section>
 
-        <!-- Projects Section -->
+
+        <section id="featured">
+    <h2>Featured Content</h2>
+
+    <div id="universityResources" class="featured-box">
+        <h3>University Resources</h3>
+        <ul>
+            <li>
+                <a href="https://www.ecpi.edu" target="_blank">
+                    ECPI University – Program Home
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="personalProjects" class="featured-box">
+        <h3>Personal Projects</h3>
+        <a href="https://github.com/corysdavis" target="_blank">
+            <img src="project1.png" alt="GitHub Project" width="200">
+            <img src="project2.png" alt="GitHub Project" width="200">
+        </a>
+    </div>
+        </section>
+
+
+        <!-- Projects -->
         <section id="projects">
             <h2>Projects</h2>
             <p>Two Sample Projects:</p>
@@ -73,7 +110,7 @@
             </table>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact">
             <h2>Contact</h2>
             <form class="contact-form">
@@ -104,9 +141,62 @@
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer>
         <p>&copy; Cory Davis</p>
     </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* featured content */
+    const projectCount = document.querySelectorAll("#projects tbody tr").length;
+    const uniDiv = document.getElementById("universityResources");
+    const personalDiv = document.getElementById("personalProjects");
+
+    if (projectCount < 3) {
+        uniDiv.style.display = "block";
+        personalDiv.style.display = "block";
+    } else {
+        uniDiv.style.display = "none";
+        personalDiv.style.display = "block";
+    }
+
+    /* skills list */
+    const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+    const skillsList = document.getElementById("skillsList");
+
+    if (skillsList) {
+        skills.forEach(skill => {
+            const li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+    }
+
+    /* dark mode */
+    const darkToggle = document.getElementById("darkModeToggle");
+
+    if (darkToggle) {
+        darkToggle.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
+
+    /* form interactivity */
+    const form = document.querySelector(".contact-form");
+    const nameInput = document.getElementById("name");
+
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert(`Thank you, ${nameInput.value}, your message has been sent!`);
+            form.reset();
+        });
+    }
+
+});
+</script>
+
 </body>
+
 </html>
