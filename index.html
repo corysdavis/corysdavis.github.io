@@ -21,7 +21,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Welcome to the Final Project Website!</h1>
+        <h1>Portfolio</h1>
         <!-- Navigation Menu -->
         <nav class="flex-nav">
             <ul>
@@ -63,6 +63,7 @@
         <a href="https://github.com/corysdavis" target="_blank">
             <img src="project1.png" alt="GitHub Project" width="200">
             <img src="project2.png" alt="GitHub Project" width="200">
+            <img src="project3.png" alt="GitHub Project" width="200">
         </a>
     </div>
         </section>
@@ -99,6 +100,11 @@
                         <td>Calculator App</td>
                         <td>An interactive calculator application.</td>
                         <td><img src="project2.png" alt="Calc App" width="500" height="350"></td>
+                    </tr>
+                    <tr>
+                        <td>Restaurant Menu App</td>
+                        <td>A restaurant menu ordering app using C#.</td>
+                        <td><img src="project3.png" alt="Calc App" width="500" height="350"></td>
                     </tr>
                 </tbody>
 
@@ -173,6 +179,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* add recent project paragraph */
+    const projectsSection = document.getElementById("projects");
+
+    if (projectsSection) {
+        const newProjectPara = document.createElement("p");
+        newProjectPara.textContent = "Recently added: A restaurant menu ordering app using C#.";
+
+    projectsSection.appendChild(newProjectPara);
+    }
+
+    // about section heading text
+    const aboutHeading = document.querySelector("#about h2");
+    if (aboutHeading) {
+        aboutHeading.textContent = "About Me";
+        aboutHeading.style.color = "#2c3e55";
+    }
+
+    // change to projects table
+    const projectsTable = document.querySelector("#projects table");
+    if (projectsTable) {
+        projectsTable.style.border = "4px solid #333";
+        projectsTable.style.fontSize = "1.1rem";
+    }
+
+    /* delayed notification */
+    setTimeout(() => {
+        const notification = document.createElement("div");
+        notification.textContent = "Welcome to my portfolio website!";
+        notification.style.backgroundColor = "#4CAF50";
+        notification.style.color = "white";
+        notification.style.padding = "10px";
+        notification.style.textAlign = "center";
+
+    document.body.prepend(notification);
+    }, 3000); // 3 seconds
+
     /* dark mode */
     const darkToggle = document.getElementById("darkModeToggle");
 
@@ -182,15 +224,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* form interactivity */
+        /* form interactivity with timed confirmation */
     const form = document.querySelector(".contact-form");
     const nameInput = document.getElementById("name");
 
     if (form) {
         form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            alert(`Thank you, ${nameInput.value}, your message has been sent!`);
-            form.reset();
+            event.preventDefault(); 
+
+            // loading message
+            const statusMessage = document.createElement("p");
+            statusMessage.textContent = "Sending message...";
+            statusMessage.style.color = "#555";
+            statusMessage.style.fontWeight = "bold";
+
+            const existingMessage = form.querySelector(".status-message");
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            statusMessage.classList.add("status-message");
+            form.appendChild(statusMessage);
+
+            // delay confirmation
+            setTimeout(() => {
+                statusMessage.textContent = "Message sent successfully!";
+                statusMessage.style.color = "green";
+                form.reset();
+            }, 2500);
         });
     }
 
