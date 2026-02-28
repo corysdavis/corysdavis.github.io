@@ -12,6 +12,14 @@
 
 <body>
 
+    <!-- welcome modal -->
+    <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+        <p>Welcome!</p>
+        <button id="closeModal">Close</button>
+    </div>
+    </div>
+
     <div class="dark-mode-toggle">
     <label>
         <input type="checkbox" id="darkModeToggle">
@@ -141,7 +149,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" title="Click to send your message!">
                 </div>
             </form>
         </section>
@@ -153,6 +161,20 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* welcome modal */
+    const modal = document.getElementById("welcomeModal");
+    const closeModalBtn = document.getElementById("closeModal");
+
+        if (modal) {
+    modal.style.display = "flex";
+    }
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+}
 
     /* featured content */
     const projectCount = document.querySelectorAll("#projects tbody tr").length;
@@ -215,14 +237,25 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.prepend(notification);
     }, 3000); // 3 seconds
 
-    /* dark mode */
-    const darkToggle = document.getElementById("darkModeToggle");
+    /* dark mode with persistence */
+const darkToggle = document.getElementById("darkModeToggle");
 
-    if (darkToggle) {
-        darkToggle.addEventListener("change", () => {
-            document.body.classList.toggle("dark-mode");
-        });
-    }
+if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    darkToggle.checked = true;
+}
+
+if (darkToggle) {
+    darkToggle.addEventListener("change", () => {
+        if (darkToggle.checked) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+}
 
         /* form interactivity with timed confirmation */
     const form = document.querySelector(".contact-form");
