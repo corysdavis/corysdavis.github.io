@@ -45,7 +45,8 @@
         <!-- About -->
        <section id="about">
             <h2>About</h2>
-            <p>Welcome to the About section.</p>
+            <p>Hi, I’m Cory Davis — an aspiring web developer building my skills 
+                through hands-on projects and continuous learning. </p>
 
         <h3>Skills</h3>
             <ul id="skillsList"></ul>
@@ -65,64 +66,40 @@
             </li>
         </ul>
     </div>
-
-    <div id="personalProjects" class="featured-box">
-        <h3>Personal Projects</h3>
-        <a href="https://github.com/corysdavis" target="_blank">
-            <img src="project1.png" alt="GitHub Project" width="200">
-            <img src="project2.png" alt="GitHub Project" width="200">
-            <img src="project3.png" alt="GitHub Project" width="200">
-        </a>
-    </div>
         </section>
 
 
         <!-- Projects -->
         <section id="projects">
-            <h2>Projects</h2>
-            <p>Three Sample Projects:</p>
+    <h2>Projects</h2>
+    <p>Three Sample Projects:</p>
 
-            <table>
-                <caption>Project Portfolio</caption>
-                <colgroup>
-                    <col style="background-color: #f0f8ff;">
-                    <col>
-                    <col style="background-color: #f0f8ff;">
-                </colgroup>
+    <table>
+        <caption>Project Portfolio</caption>
+        <colgroup>
+            <col style="background-color: #f0f8ff;">
+            <col>
+            <col style="background-color: #f0f8ff;">
+        </colgroup>
 
-                <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                    </tr>
-                </thead>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
 
-                <tbody>
-                    <tr>
-                        <td>Testimonial Grid</td>
-                        <td>Frontend Mentor Challenge</td>
-                        <td><img src="project1.png" alt="Testimonial Grid" width="500" height="350"></td>
-                    </tr>
-                    <tr>
-                        <td>Calculator App</td>
-                        <td>An interactive calculator application.</td>
-                        <td><img src="project2.png" alt="Calc App" width="500" height="350"></td>
-                    </tr>
-                    <tr>
-                        <td>Restaurant Menu App</td>
-                        <td>A restaurant menu ordering app using C#.</td>
-                        <td><img src="project3.png" alt="Calc App" width="500" height="350"></td>
-                    </tr>
-                </tbody>
+        <tbody id="projectTableBody"></tbody>
 
-                <tfoot>
-                    <tr>
-                        <td colspan="3">More projects to come!</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
+        <tfoot>
+            <tr>
+                <td colspan="3">More projects to come!</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
 
         <!-- Contact -->
         <section id="contact">
@@ -159,34 +136,73 @@
         <p>&copy; Cory Davis</p>
     </footer>
 
+<!--JavaScript-->
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* dynamic project objects */
+    let projectData = [
+        {
+            title: "Testimonial Grid",
+            summary: "A responsive testimonial layout built from a Frontend Mentor challenge.",
+            image: "project1.png",
+            repo: "https://github.com/corysdavis/Frontend-Mentor-Challenge---Testimonial-Grid"
+        },
+        {
+            title: "Calculator App",
+            summary: "An interactive calculator application.",
+            image: "project2.png",
+            repo: "https://github.com/corysdavis/Calculator-Projects"
+        },
+        {
+            title: "Restaurant Menu App",
+            summary: "A restaurant menu ordering app created using C#.",
+            image: "project3.png",
+            repo: "https://github.com/corysdavis/restaurant-menu-apps"
+        }
+    ];
+
+    const storedProjects = sessionStorage.getItem("projects");
+
+        if (!storedProjects) { sessionStorage.setItem("projects", JSON.stringify(projectData)); } else {
+            projectData = JSON.parse(storedProjects); }
+
+    const projectTableBody = document.getElementById("projectTableBody");
+
+    projectData.forEach(project => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${project.title}</td>
+            <td>${project.summary}</td>
+            <td>
+                <a href="${project.repo}" target="_blank">
+                    <img src="${project.image}" alt="${project.title}" width="500" height="350">
+                </a>
+            </td>
+        `;
+        projectTableBody.appendChild(row);
+    });
 
     /* welcome modal */
     const modal = document.getElementById("welcomeModal");
     const closeModalBtn = document.getElementById("closeModal");
 
-        if (modal) {
-    modal.style.display = "flex";
+    if (modal) modal.style.display = "flex";
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
     }
 
-if (closeModalBtn) {
-    closeModalBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-}
-
     /* featured content */
-    const projectCount = document.querySelectorAll("#projects tbody tr").length;
     const uniDiv = document.getElementById("universityResources");
-    const personalDiv = document.getElementById("personalProjects");
 
-    if (projectCount < 3) {
+    if (projectData.length <= 3) {
         uniDiv.style.display = "block";
-        personalDiv.style.display = "block";
     } else {
         uniDiv.style.display = "none";
-        personalDiv.style.display = "block";
     }
 
     /* skills list */
@@ -201,24 +217,20 @@ if (closeModalBtn) {
         });
     }
 
-    /* add recent project paragraph */
     const projectsSection = document.getElementById("projects");
 
     if (projectsSection) {
         const newProjectPara = document.createElement("p");
         newProjectPara.textContent = "Recently added: A restaurant menu ordering app using C#.";
-
-    projectsSection.appendChild(newProjectPara);
+        projectsSection.appendChild(newProjectPara);
     }
 
-    // about section heading text
+    /* about section heading */
     const aboutHeading = document.querySelector("#about h2");
     if (aboutHeading) {
         aboutHeading.textContent = "About Me";
         aboutHeading.style.color = "#2c3e55";
     }
-
-    // change to projects table
     const projectsTable = document.querySelector("#projects table");
     if (projectsTable) {
         projectsTable.style.border = "4px solid #333";
@@ -233,53 +245,47 @@ if (closeModalBtn) {
         notification.style.color = "white";
         notification.style.padding = "10px";
         notification.style.textAlign = "center";
+        document.body.prepend(notification);
+    }, 3000);
 
-    document.body.prepend(notification);
-    }, 3000); // 3 seconds
+    /* dark mode toggle */
+    const darkToggle = document.getElementById("darkModeToggle");
 
-    /* dark mode with persistence */
-const darkToggle = document.getElementById("darkModeToggle");
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkToggle.checked = true;
+    }
 
-if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-    darkToggle.checked = true;
-}
+    if (darkToggle) {
+        darkToggle.addEventListener("change", () => {
+            if (darkToggle.checked) {
+                document.body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    }
 
-if (darkToggle) {
-    darkToggle.addEventListener("change", () => {
-        if (darkToggle.checked) {
-            document.body.classList.add("dark-mode");
-            localStorage.setItem("darkMode", "enabled");
-        } else {
-            document.body.classList.remove("dark-mode");
-            localStorage.setItem("darkMode", "disabled");
-        }
-    });
-}
-
-        /* form interactivity with timed confirmation */
+    /* contact form */
     const form = document.querySelector(".contact-form");
-    const nameInput = document.getElementById("name");
 
     if (form) {
         form.addEventListener("submit", (event) => {
-            event.preventDefault(); 
+            event.preventDefault();
 
-            // loading message
             const statusMessage = document.createElement("p");
             statusMessage.textContent = "Sending message...";
             statusMessage.style.color = "#555";
             statusMessage.style.fontWeight = "bold";
+            statusMessage.classList.add("status-message");
 
             const existingMessage = form.querySelector(".status-message");
-            if (existingMessage) {
-                existingMessage.remove();
-            }
+            if (existingMessage) existingMessage.remove();
 
-            statusMessage.classList.add("status-message");
             form.appendChild(statusMessage);
 
-            // delay confirmation
             setTimeout(() => {
                 statusMessage.textContent = "Message sent successfully!";
                 statusMessage.style.color = "green";
@@ -290,6 +296,7 @@ if (darkToggle) {
 
 });
 </script>
+
 
 </body>
 
