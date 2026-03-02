@@ -1,44 +1,60 @@
-# My Personal Website
+My Personal Portfolio Website
 
-## Description
-This is my personal website where I showcase my projects and allow users to contact me.
+Overview
+Personal portfolio website designed to showcase my web development projects, highlight my skills, and provide visitors with a way to contact me. The site uses dynamic JavaScript features, including object‑based project data, DOM manipulation, and browser storage. 
 
-## Table of Contents
-- [About](#about)
-- [Projects](#projects)
-- [Contact](#contact)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [License](#license)
 
-## About
-The about section.
+About
+The About section introduces myself. This section includes a dynamically generated skills list built with JavaScript.
 
-## Projects
-Here, I showcase my projects, including:
-- **Project 1**: Testimonial Grid
-- **Project 2**: Calculator Application
+Projects
+The Projects section displays my portfolio items.
+Project data is stored as JavaScript objects, saved in sessionStorage, and rendered dynamically into the page using DOM manipulation.
 
-## Contact
-This section allows users to contact me through a form. Users can input their name, email, and message, which will be sent to my email or stored for later reference.
+Current Featured Projects
+Testimonial Grid — A responsive layout challenge from Frontend Mentor.
 
-### Contact Form Fields
-- **Name**: User's name
-- **Email**: User's email address
-- **Message**: User's message or inquiry
+Calculator Application — An interactive calculator built with JavaScript.
 
-## Technologies Used
-- HTML5
-- CSS3
-- [Any other technologies or frameworks you are using]
+Restaurant Menu App — A menu ordering application created using C#.
 
-## Installation
-To view this website locally, follow these steps:
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd <project-directory>`
-3. Open `index.html` in your web browser.
+Each project includes:
 
-## License
-This project is licensed under the [Your License Name] License - see the [LICENSE](LICENSE) file for details.
+Title
 
-![Local Host Screenshot](./Local%20Host.png)
+Brief summary
+
+Image
+
+Link to GitHub repository
+
+All project entries are generated programmatically from an array of objects.
+
+Contact
+Visitors can reach out using the built‑in contact form.
+The form includes:
+
+Name — User’s full name
+
+Email — User’s email address
+
+Subject — Optional message subject
+
+Message — User’s message or inquiry
+
+The form includes interactive JavaScript features such as loading and confirmation messages.
+
+Technologies Used
+HTML5
+
+CSS3
+
+JavaScript (ES6+)
+
+DOM Manipulation
+
+sessionStorage
+
+JSON.stringify() / JSON.parse()
+
+Responsive Design
