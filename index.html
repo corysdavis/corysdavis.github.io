@@ -1,303 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Final Project Website">
-    <meta name="keywords" content="final project, homepage, portfolio, web development">
-    <meta name="author" content="Cory Davis">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Website</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cory Davis</title>
+<meta name="description" content="Cory Davis — front-end web developer. Projects, skills, and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <!-- welcome modal -->
-    <div id="welcomeModal" class="modal">
-    <div class="modal-content">
-        <p>Welcome!</p>
-        <button id="closeModal">Close</button>
+<header>
+  <div class="nav-inner">
+    <a class="nav-name" href="#hero">cory<span>.</span>davis</a>
+    <nav>
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="hero">
+    <p class="prompt"><span class="sigil">&gt;</span> <span class="cmd">whoami</span></p>
+    <h1>Cory Davis<span class="accent">web developer</span></h1>
+    <p class="hero-sub">
+      Front-end developer with an operations background.<br>
+      Developing practical, optimized solutions for real-world scenarios.
+    </p>
+    <div class="hero-links">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn" href="resume.pdf">Resume</a>
     </div>
+  </section>
+
+  <section id="about">
+    <span class="label">about</span>
+
+    <p class="lead">
+      I'm a front-end web developer with a background in operations management
+      and training teams.
+    </p>
+    <p>
+      Optimization is the standard I hold every project to: every workflow and
+      every build should run a little better than the last.
+    </p>
+
+    <dl class="facts">
+      <div>
+        <dt>based in</dt>
+        <dd>Hampton Roads, VA, and open to remote work</dd>
+      </div>
+      <div>
+        <dt>education</dt>
+        <dd>Information Technology, ECPI University (December 2026)</dd>
+      </div>
+      <div>
+        <dt>outside of <br>
+          development</dt>
+        <dd>Basketball, snowboarding, golf, and travel. <br>
+          Always learning something new.</dd>
+      </div>
+      <div>
+        <dt>best way <br>
+          to reach me</dt>
+        <dd><a href="mailto:coryscdavis@gmail.com">Email</a></dd>
+      </div>
+    </dl>
+
+    <ul class="skills">
+      <li>JavaScript</li>
+      <li>HTML / CSS</li>
+      <li>Next.js</li>
+      <li>PHP</li>
+      <li>MySQL</li>
+      <li>Git</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <span class="label">projects</span>
+
+    <!-- Projects -->
+
+    <!-- 1 -->
+    <div class="project empty">
+      <div class="project-bar">
+        <span class="dot r"></span><span class="dot a"></span><span class="dot g"></span>
+        <span class="filename">project-1/</span>
+      </div>
+      <div class="project-body">
+        <h3></h3>
+        <p></p>
+        <div class="project-meta">
+          <div class="tags"></div>
+          <div class="project-links"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="dark-mode-toggle">
-    <label>
-        <input type="checkbox" id="darkModeToggle">
-        Dark Mode
-    </label>
+    <!-- 2 -->
+    <div class="project empty">
+      <div class="project-bar">
+        <span class="dot r"></span><span class="dot a"></span><span class="dot g"></span>
+        <span class="filename">project-2/</span>
+      </div>
+      <div class="project-body">
+        <h3></h3>
+        <p></p>
+        <div class="project-meta">
+          <div class="tags"></div>
+          <div class="project-links"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <h1>Portfolio</h1>
-        <!-- Navigation Menu -->
-        <nav class="flex-nav">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-main">
-        <!-- About -->
-       <section id="about">
-            <h2>About</h2>
-            <p>Hi, I’m Cory Davis — an aspiring web developer building my skills 
-                through hands-on projects and continuous learning. </p>
-
-        <h3>Skills</h3>
-            <ul id="skillsList"></ul>
-        </section>
-
-
-        <section id="featured">
-    <h2>Featured Content</h2>
-
-    <div id="universityResources" class="featured-box">
-        <h3>University Resources</h3>
-        <ul>
-            <li>
-                <a href="https://www.ecpi.edu" target="_blank">
-                    ECPI University – Program Home
-                </a>
-            </li>
-        </ul>
+    <!-- 3 -->
+    <div class="project empty">
+      <div class="project-bar">
+        <span class="dot r"></span><span class="dot a"></span><span class="dot g"></span>
+        <span class="filename">project-3/</span>
+      </div>
+      <div class="project-body">
+        <h3></h3>
+        <p></p>
+        <div class="project-meta">
+          <div class="tags"></div>
+          <div class="project-links"></div>
+        </div>
+      </div>
     </div>
-        </section>
 
+    <!-- 4 -->
+    <div class="project empty">
+      <div class="project-bar">
+        <span class="dot r"></span><span class="dot a"></span><span class="dot g"></span>
+        <span class="filename">project-4/</span>
+      </div>
+      <div class="project-body">
+        <h3></h3>
+        <p></p>
+        <div class="project-meta">
+          <div class="tags"></div>
+          <div class="project-links"></div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Projects -->
-        <section id="projects">
-    <h2>Projects</h2>
-    <p>Three Sample Projects:</p>
+    <!-- 5 -->
+    <div class="project empty">
+      <div class="project-bar">
+        <span class="dot r"></span><span class="dot a"></span><span class="dot g"></span>
+        <span class="filename">project-5/</span>
+      </div>
+      <div class="project-body">
+        <h3></h3>
+        <p></p>
+        <div class="project-meta">
+          <div class="tags"></div>
+          <div class="project-links"></div>
+        </div>
+      </div>
+    </div>
 
-    <table>
-        <caption>Project Portfolio</caption>
-        <colgroup>
-            <col style="background-color: #f0f8ff;">
-            <col>
-            <col style="background-color: #f0f8ff;">
-        </colgroup>
+  </section>
 
-        <thead>
-            <tr>
-                <th>Project Name</th>
-                <th>Description</th>
-                <th>Image</th>
-            </tr>
-        </thead>
+  <section id="contact">
+    <span class="label">contact</span>
+    <ul class="contact-list">
+      <li>
+        <a href="mailto:coryscdavis@gmail.com">
+          <span class="key">email</span>
+          <span class="value">coryscdavis@gmail.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/cory-davis-/" target="_blank" rel="noopener">
+          <span class="key">linkedin</span>
+          <span class="value">linkedin.com/in/cory-davis-/</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/corysdavis" target="_blank" rel="noopener">
+          <span class="key">github</span>
+          <span class="value">github.com/corysdavis</span>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-        <tbody id="projectTableBody"></tbody>
+</main>
 
-        <tfoot>
-            <tr>
-                <td colspan="3">More projects to come!</td>
-            </tr>
-        </tfoot>
-    </table>
-</section>
-
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Submit" title="Click to send your message!">
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; Cory Davis</p>
-    </footer>
-
-<!--JavaScript-->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* dynamic project objects */
-    let projectData = [
-        {
-            title: "Testimonial Grid",
-            summary: "A responsive testimonial layout built from a Frontend Mentor challenge.",
-            image: "project1.png",
-            repo: "https://github.com/corysdavis/Frontend-Mentor-Challenge---Testimonial-Grid"
-        },
-        {
-            title: "Calculator App",
-            summary: "An interactive calculator application.",
-            image: "project2.png",
-            repo: "https://github.com/corysdavis/Calculator-Projects"
-        },
-        {
-            title: "Restaurant Menu App",
-            summary: "A restaurant menu ordering app created using C#.",
-            image: "project3.png",
-            repo: "https://github.com/corysdavis/restaurant-menu-apps"
-        }
-    ];
-
-    const storedProjects = sessionStorage.getItem("projects");
-
-        if (!storedProjects) { sessionStorage.setItem("projects", JSON.stringify(projectData)); } else {
-            projectData = JSON.parse(storedProjects); }
-
-    const projectTableBody = document.getElementById("projectTableBody");
-
-    projectData.forEach(project => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${project.title}</td>
-            <td>${project.summary}</td>
-            <td>
-                <a href="${project.repo}" target="_blank">
-                    <img src="${project.image}" alt="${project.title}" width="500" height="350">
-                </a>
-            </td>
-        `;
-        projectTableBody.appendChild(row);
-    });
-
-    /* welcome modal */
-    const modal = document.getElementById("welcomeModal");
-    const closeModalBtn = document.getElementById("closeModal");
-
-    if (modal) modal.style.display = "flex";
-
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-    }
-
-    /* featured content */
-    const uniDiv = document.getElementById("universityResources");
-
-    if (projectData.length <= 3) {
-        uniDiv.style.display = "block";
-    } else {
-        uniDiv.style.display = "none";
-    }
-
-    /* skills list */
-    const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
-    const skillsList = document.getElementById("skillsList");
-
-    if (skillsList) {
-        skills.forEach(skill => {
-            const li = document.createElement("li");
-            li.textContent = skill;
-            skillsList.appendChild(li);
-        });
-    }
-
-    const projectsSection = document.getElementById("projects");
-
-    if (projectsSection) {
-        const newProjectPara = document.createElement("p");
-        newProjectPara.textContent = "Recently added: A restaurant menu ordering app using C#.";
-        projectsSection.appendChild(newProjectPara);
-    }
-
-    /* about section heading */
-    const aboutHeading = document.querySelector("#about h2");
-    if (aboutHeading) {
-        aboutHeading.textContent = "About Me";
-        aboutHeading.style.color = "#2c3e55";
-    }
-    const projectsTable = document.querySelector("#projects table");
-    if (projectsTable) {
-        projectsTable.style.border = "4px solid #333";
-        projectsTable.style.fontSize = "1.1rem";
-    }
-
-    /* delayed notification */
-    setTimeout(() => {
-        const notification = document.createElement("div");
-        notification.textContent = "Welcome to my portfolio website!";
-        notification.style.backgroundColor = "#4CAF50";
-        notification.style.color = "white";
-        notification.style.padding = "10px";
-        notification.style.textAlign = "center";
-        document.body.prepend(notification);
-    }, 3000);
-
-    /* dark mode toggle */
-    const darkToggle = document.getElementById("darkModeToggle");
-
-    if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        darkToggle.checked = true;
-    }
-
-    if (darkToggle) {
-        darkToggle.addEventListener("change", () => {
-            if (darkToggle.checked) {
-                document.body.classList.add("dark-mode");
-                localStorage.setItem("darkMode", "enabled");
-            } else {
-                document.body.classList.remove("dark-mode");
-                localStorage.setItem("darkMode", "disabled");
-            }
-        });
-    }
-
-    /* contact form */
-    const form = document.querySelector(".contact-form");
-
-    if (form) {
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const statusMessage = document.createElement("p");
-            statusMessage.textContent = "Sending message...";
-            statusMessage.style.color = "#555";
-            statusMessage.style.fontWeight = "bold";
-            statusMessage.classList.add("status-message");
-
-            const existingMessage = form.querySelector(".status-message");
-            if (existingMessage) existingMessage.remove();
-
-            form.appendChild(statusMessage);
-
-            setTimeout(() => {
-                statusMessage.textContent = "Message sent successfully!";
-                statusMessage.style.color = "green";
-                form.reset();
-            }, 2500);
-        });
-    }
-
-});
-</script>
-
+<footer>
+  © Cory Davis
+</footer>
 
 </body>
-
 </html>
